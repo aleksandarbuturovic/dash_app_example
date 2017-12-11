@@ -11,7 +11,9 @@
 # The other graph will be a line chart with two DropDown boxes, one for the country and the other for selecting one of the indicators.
 # 
 
-# In[1]:
+# ### My Dashboard
+
+# In[4]:
 
 import dash
 from dash.dependencies import Input, Output 
@@ -20,21 +22,11 @@ import dash_html_components as html
 import pandas as pd
 import plotly.graph_objs as go
 
-
-# In[2]:
-
-#First we import the files and create the coresponding indicators for the values and the countries
-
 euro_data = pd.read_csv("Eurostat_file.csv")
 
 available_indicators = euro_data['NA_ITEM'].unique()
 
 available_countries = euro_data['GEO'].unique()
-
-
-# ### My Dashboard
-
-# In[4]:
 
 #We start with creating the app itself
 app = dash.Dash(__name__)
